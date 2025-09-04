@@ -1,0 +1,29 @@
+/* src/pages/Maps.css */
+.maps-container {
+  padding: 60px 20px;
+  text-align: center;
+  min-height: 100vh;
+  background: #f4f4f4;
+}
+
+.maps-container h1 {
+  font-size: 2.2rem;
+  color: #2d572c;
+  margin-bottom: 15px;
+}
+
+.maps-container p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.map-box {
+  width: 90%;
+  max-width: 1000px;
+  height: 500px;
+  margin: 0 auto;
+  border: 3px solid #2d572c;
+  border-radius: 12px;
+  overflow: hidden;
+}
