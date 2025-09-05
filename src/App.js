@@ -4,16 +4,17 @@ import Navbar from "./components/nav";
 import TrafficForm from "./components/trafficform";
 import Footer from "./components/footer";
 import { useState } from "react";
-import './App.css';
-import Maps from './pages/map';
+import "./App.css";
+import Maps from "./pages/map";
 import Hero from "./pages/hero";
-import './pages/hero.css'
-import Landing from "./components/landing";
+import "./pages/hero.css";
+import Landing from "./pages/landing";
 import Updateform from "./pages/updatetraffic";
-
 
 function App() {
   const [routeInfo, setRouteInfo] = useState(null);
+
+  
 
   const handleTrafficCheck = (formData) => {
     // Simulate: If "Nairobi CBD" is destination → heavy traffic
@@ -21,13 +22,13 @@ function App() {
       setRouteInfo({
         traffic: true,
         message: "Heavy traffic detected! 🚦",
-        alternative: "Use Ngong Road instead of Uhuru Highway."
+        alternative: "Use Ngong Road instead of Uhuru Highway.",
       });
     } else {
       setRouteInfo({
         traffic: false,
         message: "No traffic detected ✅",
-        alternative: null
+        alternative: null,
       });
     }
   };
@@ -35,37 +36,33 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <Hero/>
-      <div className="container">
-        <Routes>
-          <Route path="/" element={<Landing/>} />
-          <Route path="/maps" element={<Maps/>}/>
-          <Route path='/update' element={<Updateform/>}/>
-          <Route 
-            path="/trafficform" 
-            element={
-              <>
-                <TrafficForm onCheckTraffic={handleTrafficCheck} />
-                {routeInfo && (
-                  <div className="route-info">
-                    <p>{routeInfo.message}</p>
-                    {routeInfo.traffic && (
-                      <button onClick={() => alert(routeInfo.alternative)}>
-                        Show Alternative Route
-                      </button>
-                    )}
-                  </div>
-                )}
-              </>
-            } 
-          />
-        </Routes>
-      </div>
-      
+      <Routes>
+        <Route path="/" element={<Hero />} />
+        <Route path="/maps" element={<Maps />} />
+        <Route path="/update" element={<Updateform />} />
+        <Route
+          path="/trafficform"
+          element={
+            <>
+              <TrafficForm onCheckTraffic={handleTrafficCheck} />
+              {routeInfo && (
+                <div className="route-info">
+                  <p>{routeInfo.message}</p>
+                  {routeInfo.traffic && (
+                    <button className='altbut' onClick={() => alert(routeInfo.alternative)}>
+                      Show Alternative Route
+                    </button>
+                  )}
+                </div>
+              )}
+            </>
+          }
+        />
+      </Routes>
+      <Landing/>
       <Footer />
     </Router>
   );
 }
 
 export default App;
-

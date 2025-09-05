@@ -1,4 +1,8 @@
 /* src/pages/Home.css */
+body {
+  background: #111;
+}
+
 .home-hero {
   background: url("https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80")
     no-repeat center center/cover;

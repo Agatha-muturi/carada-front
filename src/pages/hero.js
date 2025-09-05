@@ -9,11 +9,11 @@ function Hero() {
       <div className="home-overlay">
         <h1>Welcome to Car Rada 🚘</h1>
         <p>
-          Stay ahead of traffic, get real-time updates, 
+          Stay ahead of traffic, get real-time updates, update fellow motorists on areas with traffic
           and find the best alternative routes across Kenya.
         </p>
         <Link to="/trafficform" className="cta-btn">
-          Check for taffic
+          Check for traffic
         </Link>
         <Link to='/update' className="btn-right">
          Update traffic
