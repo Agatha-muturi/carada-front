@@ -1,14 +1,28 @@
-export async function getAlternativeRoute(start, end) {
-  const apiKey = process.env.REACT_APP_ORS_API_KEY;
+// src/api/ors.js
+const API_BASE = 'https://carada-back.onrender.com';
 
-  const response = await fetch(
-    `https://api.openrouteservice.org/v2/directions/driving-car?api_key=${apiKey}&start=${start}&end=${end}`
-  );
+// ✅ function to check traffic and get alternative routes
+export default async function getAlternativeRoute({ currentLocation, destination }) {
+  try {
+    const res = await fetch(`${API_BASE}/api/traffic/check`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ currentLocation, destination }),
+    });
 
-  if (!response.ok) {
-    throw new Error("Failed to fetch route");
+    if (!res.ok) {
+      throw new Error("Failed to fetch alternative route");
+    }
+
+    return await res.json();
+  } catch (err) {
+    console.error("Error in getAlternativeRoute:", err);
+    throw err;
   }
-
-  const data = await response.json();
-  return data;
 }
+
+// export default {
+//   getAlternativeRoute,
+// };

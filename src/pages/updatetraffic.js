@@ -1,5 +1,5 @@
 import { useState } from "react";
-import  {getAlternativeRoute} from "../api/ors";
+import  getAlternativeRoute from "../api/ors";
 
 const Updateform=({ onUpdateAdded })=>{
   const [location, setLocation] = useState("");
