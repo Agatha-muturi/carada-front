@@ -41,7 +41,7 @@ function Landing() {
                             <div className="card">
                             <img src={Globe} className="card-img-top" alt="traffic"/>
                                 <div className="card-body">
-                                    <p className="card-text">Updates you on real-time traffic.</p>
+                                    <p className="card-text">You get to update your fellow motorists on areas to avoid</p>
                                 </div>
                             </div>
                         </div>
