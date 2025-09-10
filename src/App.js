@@ -10,28 +10,28 @@ import Hero from "./pages/hero";
 import "./pages/hero.css";
 import Landing from "./pages/landing";
 import Updateform from "./pages/updatetraffic";
-
+ 
 function App() {
-  // const [routeInfo, setRouteInfo] = useState(null);
+  const [routeInfo, setRouteInfo] = useState(null);
 
   
 
-  // const handleTrafficCheck = (formData) => {
-  //   // Simulate: If "Nairobi CBD" is destination → heavy traffic
-  //   if (formData.destination.toLowerCase().includes("nairobi")) {
-  //     setRouteInfo({
-  //       traffic: true,
-  //       message: "Heavy traffic detected! 🚦",
-  //       alternative: "Use Ngong Road instead of Uhuru Highway.",
-  //     });
-  //   } else {
-  //     setRouteInfo({
-  //       traffic: false,
-  //       message: "No traffic detected ✅",
-  //       alternative: null,
-  //     });
-  //   }
-  // };
+  const handleTrafficCheck = (formData) => {
+    // Simulate: If "Nairobi CBD" is destination → heavy traffic
+    if (formData.destination.toLowerCase().includes("nairobi")) {
+      setRouteInfo({
+        traffic: true,
+        message: "Heavy traffic detected! 🚦",
+        alternative: "Use Ngong Road instead of Uhuru Highway.",
+      });
+    } else {
+      setRouteInfo({
+        traffic: false,
+        message: "No traffic detected ✅",
+        alternative: null,
+      });
+    }
+  };
 
   return (
     <Router>
